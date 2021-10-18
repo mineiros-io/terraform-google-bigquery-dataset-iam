@@ -35,6 +35,11 @@ variable "authoritative" {
   default     = true
 }
 
+variable "policy_bindings" {
+  description = "(Optional) A list of IAM policy bindings."
+  type        = any
+  default     = null
+}
 
 # ------------------------------------------------------------------------------
 # MODULE CONFIGURATION PARAMETERS
