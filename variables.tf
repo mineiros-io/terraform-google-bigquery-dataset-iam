@@ -7,16 +7,16 @@ variable "dataset_id" {
   type        = string
 }
 
-variable "role" {
-  description = "(Required) The role that should be applied. Only one 'google_secret_manager_secret_iam_binding' can be used per role. Note that custom roles must be of the format '[projects|organizations]/{parent-name}/roles/{role-name}'."
-  type        = string
-}
-
 # ---------------------------------------------------------------------------------------------------------------------
 # OPTIONAL VARIABLES
 # These variables have defaults, but may be overridden.
 # ---------------------------------------------------------------------------------------------------------------------
 
+variable "role" {
+  description = "(Optional) The role that should be applied. Only one 'google_secret_manager_secret_iam_binding' can be used per role. Note that custom roles must be of the format '[projects|organizations]/{parent-name}/roles/{role-name}'."
+  type        = string
+  default     = null
+}
 variable "project" {
   description = "(Optional) The ID of the project in which the resource belongs. If it is not provided, the provider project is used."
   type        = string
@@ -25,7 +25,7 @@ variable "project" {
 
 variable "members" {
   type        = set(string)
-  description = "(Optional) Identities that will be added/set to/for the role. Each entry can have one of the following values: 'allUsers', 'allAuthenticatedUsers', 'serviceAccount:{emailid}', 'group:{emailid}', 'domain:{domain}'."
+  description = "(Optional) Identities that will be granted the privilege in role. Each entry can have one of the following values: 'allUsers', 'allAuthenticatedUsers', 'user:{emailid}', 'serviceAccount:{emailid}', 'group:{emailid}', 'domain:{domain}'."
   default     = []
 }
 
@@ -35,6 +35,11 @@ variable "authoritative" {
   default     = true
 }
 
+variable "policy_bindings" {
+  description = "(Optional) A list of IAM policy bindings."
+  type        = any
+  default     = null
+}
 
 # ------------------------------------------------------------------------------
 # MODULE CONFIGURATION PARAMETERS
