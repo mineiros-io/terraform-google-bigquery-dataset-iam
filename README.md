@@ -11,7 +11,7 @@
 A [Terraform](https://www.terraform.io) module to create a [Google Bigquery Dataset IAM](https://cloud.google.com/bigquery/docs/access-control) on [Google Cloud Services (GCP)](https://cloud.google.com/).
 
 **_This module supports Terraform version 1
-and is compatible with the Terraform Google Provider version 3._**
+and is compatible with the Terraform Google Provider version 4._**
 
 This module is part of our Infrastructure as Code (IaC) framework
 that enables our users and customers to easily deploy and manage reusable,
@@ -170,7 +170,7 @@ Default is the project that is configured in the provider.
 ## Module Outputs
 
 The following attributes are exported in the outputs of the module:
-      
+
 - **`iam`**
 
   All attributes of the created `iam_binding` or `iam_member` or `iam_policy` resource according to the mode.
