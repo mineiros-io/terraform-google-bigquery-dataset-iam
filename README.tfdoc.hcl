@@ -63,7 +63,7 @@ section {
 
       ```hcl
       module "terraform-google-bigquery-dataset-iam" {
-        source = "github.com/mineiros-io/terraform-google-bigquery-dataset-iam.git?ref=v0.1.0"
+        source = "github.com/mineiros-io/terraform-google-bigquery-dataset-iam.git?ref=v0.0.3"
 
         dataset_id = google_bigquery_dataset.dataset.dataset_id
         role       = "roles/bigquery.dataViewer"
